@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Rooted Renovations | Book Consultation or Request Quote</title>
+  <meta name="description" content="Contact Rooted Renovations by call, email, or form to book a consultation, request a quote, or ask a renovation question." />
+  <link rel="canonical" href="https://therootedrenovations.com/contact.html" />
+  <meta name="robots" content="index,follow" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"ContactPage","name":"Rooted Renovations Contact"}
+  </script>
+</head>
+<body>
+<header class="site-header"><div class="container nav-wrap"><a class="brand" href="/">Rooted Renovations</a><nav><a href="/">Home</a><a href="/services.html">Services</a><a href="/about.html">About Us</a><a href="/portfolio.html">Portfolio</a><a href="/faq.html">FAQ</a><a href="/contact.html">Contact</a></nav></div></header>
+<main class="container">
+  <p class="breadcrumbs"><a href="/">Home</a> / Contact</p>
+  <section class="section contact-layout">
+    <div>
+      <h1>Contact</h1>
+      <p><strong>Call:</strong> <a href="tel:+14175920300">(417) 592-0300</a></p>
+      <p><strong>Email:</strong> <a href="mailto:Hello@therootedrenovations.com">Hello@therootedrenovations.com</a></p>
+      <p>Use the form to book a consultation, request a quote, or ask a project question.</p>
+    </div>
+
+    <form id="lead-form" class="card form" novalidate>
+      <h2>Interactive Lead Form</h2>
+      <label for="name">Full Name</label>
+      <input id="name" name="name" required />
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required />
+      <label for="phone">Phone</label>
+      <input id="phone" name="phone" type="tel" />
+      <label for="interest">I want to...</label>
+      <select id="interest" name="interest" required>
+        <option value="">Select one</option><option>Book a Consultation</option><option>Request a Quote</option><option>General Question</option>
+      </select>
+      <label for="projectType">Project Type</label>
+      <select id="projectType" name="projectType" required>
+        <option value="">Select project type</option><option>Home Renovation</option><option>3D Modeling</option><option>Solar Planning</option><option>Multi-Service Project</option>
+      </select>
+      <label for="location">Project Location</label>
+      <input id="location" name="location" placeholder="City / neighborhood" required />
+      <label for="message">Project Details</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+      <button type="submit" class="btn">Send Request</button>
+      <p id="form-status" aria-live="polite"></p>
+    </form>
+  </section>
+</main>
+<footer class="site-footer"><div class="container"><p>© <span id="year"></span> Rooted Renovations.</p></div></footer>
+<script src="/script.js"></script>
+</body>
+</html>
