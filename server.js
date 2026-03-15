@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000;
 const requiredEnv = ['SMTP_HOST', 'SMTP_PORT', 'SMTP_USER', 'SMTP_PASS', 'LEAD_TO_EMAIL'];
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname));
 
 app.post('/api/lead', async (req, res) => {
   const { name, email, phone, interest, projectType, location, message } = req.body || {};
@@ -61,7 +61,7 @@ app.post('/api/lead', async (req, res) => {
 });
 
 app.get('*', (_req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.listen(port, () => {
