@@ -1,34 +1,43 @@
-# Rooted Renovations Website
+# Aqua Monkeys Aquatic Rentals Website
 
-Multi-page marketing site and lead-capture backend for Rooted Renovations.
+Single-page, mobile-first marketing website for **Aqua Monkeys Aquatic Rentals** (Grand Lake, Oklahoma).
 
-## Pages
-- `/` Home
-- `/services.html`
-- `/about.html`
-- `/portfolio.html`
-- `/faq.html`
-- `/contact.html`
-- `/locations/springfield-mo.html`
-- `/locations/branson-mo.html`
+## Tech Stack
+- Static `index.html`
+- `styles.css`
+- `script.js`
+- Optional backend-free form handling via Formspree
 
-## SEO / AI Search Features
-- Structured data: Organization, Person, Service list, FAQPage, BreadcrumbList.
-- Crawl files: `robots.txt` and `sitemap.xml`.
-- Localized service pages and measurable portfolio outcomes.
+## File Guide
+- `index.html` → All page sections/content
+- `styles.css` → Design system, layout, responsive behavior
+- `script.js` → Mobile nav toggle, footer year, booking form status handling
+- `robots.txt` / `sitemap.xml` → Search engine crawl hints (update with your live domain)
 
-## Run locally
-1. `npm install`
-2. Copy `.env.example` to `.env` and set SMTP values.
-3. `npm start`
-4. Visit `http://localhost:3000`
+## Pre-Launch Checklist
+1. **Set your live form endpoint**
+   - In `index.html`, replace `https://formspree.io/f/FORM_ENDPOINT` with your real Formspree endpoint.
+2. **Replace placeholder images**
+   - Update hero, rental cards, and gallery image URLs in `index.html` and `styles.css`.
+3. **Set your production domain**
+   - Update `sitemap.xml` URL(s) to your real domain.
+   - Update `robots.txt` sitemap line with your real domain.
+   - If using GitHub Pages custom domain, create/update `CNAME` in the repo root.
+4. **Final content QA**
+   - Confirm pricing, policies, service area wording, and contact info.
 
-## Real lead email delivery
-Form submissions post to `POST /api/lead` and are emailed via SMTP.
-Required vars:
-- `SMTP_HOST`
-- `SMTP_PORT`
-- `SMTP_USER`
-- `SMTP_PASS`
-- `SMTP_FROM`
-- `LEAD_TO_EMAIL`
+## GitHub Pages Deploy
+1. Push this repo to GitHub.
+2. In GitHub: **Settings → Pages**.
+3. Source: `Deploy from a branch`.
+4. Branch: `main` (or your deploy branch), folder `/ (root)`.
+5. Save and wait for deploy URL.
+
+## Local Preview
+Because this is a static site, you can open `index.html` directly, or run any static server:
+
+```bash
+python3 -m http.server 8080
+```
+
+Then open: `http://localhost:8080`.

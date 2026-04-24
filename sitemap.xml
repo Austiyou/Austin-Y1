@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://therootedrenovations.com/</loc></url>
-  <url><loc>https://therootedrenovations.com/services.html</loc></url>
-  <url><loc>https://therootedrenovations.com/about.html</loc></url>
-  <url><loc>https://therootedrenovations.com/portfolio.html</loc></url>
-  <url><loc>https://therootedrenovations.com/faq.html</loc></url>
-  <url><loc>https://therootedrenovations.com/contact.html</loc></url>
-  <url><loc>https://therootedrenovations.com/locations/springfield-mo.html</loc></url>
-  <url><loc>https://therootedrenovations.com/locations/branson-mo.html</loc></url>
+  <!-- Replace YOUR-DOMAIN-HERE with your real live domain -->
+  <url>
+    <loc>https://YOUR-DOMAIN-HERE/</loc>
+  </url>
 </urlset>

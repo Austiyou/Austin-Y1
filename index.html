@@ -1,86 +1,311 @@
 <!DOCTYPE html>
+<!--
+README / EDIT GUIDE
+Files used:
+- index.html (all page content and section structure)
+- styles.css (visual design, layout, responsive behavior)
+- script.js (mobile menu toggle, smooth scrolling, footer year, form helper)
+
+Where to replace images:
+- HERO background image URL: styles.css -> .hero section background
+- Rental card images: index.html -> Featured Rentals section <img> src values
+- Gallery images: index.html -> Gallery section <img> src values
+
+Where to change contact info:
+- index.html -> header CTA, hero CTA, contact section, footer
+
+Where to edit inventory:
+- index.html -> Featured Rentals cards (name, make/model placeholders, feature tags)
+
+Where to edit pricing/policies:
+- index.html -> Pricing, FAQ, and legal notice in footer
+-->
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rooted Renovations | Southwest Missouri Renovation, 3D Modeling & Solar Consulting</title>
-  <meta name="description" content="Rooted Renovations helps Southwest Missouri homeowners, contractors, and developers with renovation consulting, 3D modeling, and solar planning. Book a consultation or request a quote." />
+  <title>Aqua Monkeys Aquatic Rentals | Luxury Jet Ski Rentals at Grand Lake</title>
+  <meta name="description" content="Aqua Monkeys Aquatic Rentals offers premium jet ski rentals at Grand Lake, Oklahoma and surrounding lake areas. $500/day with delivery options." />
   <meta name="robots" content="index,follow" />
-  <meta property="og:title" content="Rooted Renovations" />
-  <meta property="og:description" content="Renovation consulting, 3D modeling, and solar services for Southwest Missouri." />
+  <meta property="og:title" content="Aqua Monkeys Aquatic Rentals" />
+  <meta property="og:description" content="Luxury jet ski rentals at Grand Lake, Oklahoma. Fast, clean, premium rides ready for the water." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://therootedrenovations.com/" />
-  <link rel="canonical" href="https://therootedrenovations.com/" />
+  <meta name="theme-color" content="#0b1f4f" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
-  <script type="application/ld+json">
-    {
-      "@context":"https://schema.org",
-      "@type":"Organization",
-      "name":"Rooted Renovations",
-      "url":"https://therootedrenovations.com",
-      "email":"Hello@therootedrenovations.com",
-      "telephone":"+1-417-592-0300",
-      "founder":{"@type":"Person","name":"Austin Young"},
-      "areaServed":"Southwest Missouri",
-      "contactPoint":{"@type":"ContactPoint","contactType":"customer service","telephone":"+1-417-592-0300","email":"Hello@therootedrenovations.com"}
-    }
-  </script>
 </head>
 <body>
+  <a class="skip-link" href="#home">Skip to content</a>
+
   <header class="site-header">
     <div class="container nav-wrap">
-      <a class="brand" href="index.html">Rooted Renovations</a>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="about.html">About Us</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
+      <a class="brand" href="#home">Aqua Monkeys Aquatic Rentals</a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#rentals">Rentals</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
       </nav>
+
+      <a class="btn nav-cta" href="tel:+14175920300">Call / Text Now</a>
     </div>
   </header>
 
   <main>
-    <section class="hero container">
-      <p class="eyebrow">Serving Homeowners, Contractors & Developers Across Southwest Missouri</p>
-      <h1>Plan Better Renovations with Consulting, 3D Modeling, and Solar Expertise</h1>
-      <p class="lead">Professional, friendly guidance from Austin Young and the Rooted Renovations team to help you reduce risk, improve outcomes, and move projects forward with confidence.</p>
-      <div class="cta-row">
-        <a class="btn" href="contact.html#lead-form">Book a Consultation</a>
-        <a class="btn secondary" href="tel:+14175920300">Call (417) 592-0300</a>
+    <section id="home" class="hero">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <p class="eyebrow">Grand Lake, Oklahoma • Premium Local Service</p>
+        <h1>Luxury Jet Ski Rentals at Grand Lake</h1>
+        <p class="lead">Premium Jet Ski Rentals. Fast. Clean. Ready for the water. Reserve your ride for <strong>$500/day per jet ski</strong> with flexible delivery options across Grand Lake and surrounding lake areas.</p>
+        <div class="cta-row">
+          <a class="btn" href="tel:+14175920300">Call / Text Now</a>
+          <a class="btn secondary" href="#contact">Book Now</a>
+        </div>
       </div>
     </section>
 
-    <section class="container section">
-      <h2>Core Services</h2>
-      <div class="grid three">
-        <article class="card"><h3>Renovation Consulting</h3><p>Scope, budget, sequencing, and owner representation support.</p></article>
-        <article class="card"><h3>3D Modeling</h3><p>Visualize layouts and systems before construction starts.</p></article>
-        <article class="card"><h3>Solar Services</h3><p>Integrate solar strategy into remodel planning for long-term efficiency.</p></article>
+    <section id="rentals" class="section container">
+      <div class="section-head">
+        <p class="eyebrow">Featured Rentals</p>
+        <h2>Choose Your Premium Ride</h2>
+      </div>
+
+      <div class="grid rentals-grid">
+        <article class="card rental-card">
+          <!-- Replace this with your real Jet Ski 1 photo -->
+          <img src="https://images.unsplash.com/photo-1563387852576-964bc31b73af?auto=format&fit=crop&w=1200&q=80" alt="Jet Ski 1 on open lake water" loading="lazy" />
+          <div class="card-body">
+            <h3>Jet Ski 1</h3>
+            <!-- Update year/make/model when available -->
+            <p class="meta">Year / Make / Model: <em>Details coming soon</em></p>
+            <p>Built for premium lake days, Jet Ski 1 delivers speed, comfort, and a smooth ride for a high-end rental experience.</p>
+            <p class="price">$500/day</p>
+            <ul class="pill-list">
+              <li>High Performance</li>
+              <li>Luxury Ride</li>
+              <li>Fast</li>
+            </ul>
+            <a class="btn card-btn" href="#contact">Reserve This Jet Ski</a>
+          </div>
+        </article>
+
+        <article class="card rental-card">
+          <!-- Replace this with your real Jet Ski 2 photo -->
+          <img src="https://images.unsplash.com/photo-1560921640-16f7f96d6ab9?auto=format&fit=crop&w=1200&q=80" alt="Jet Ski 2 side profile near dock" loading="lazy" />
+          <div class="card-body">
+            <h3>Jet Ski 2</h3>
+            <!-- Update year/make/model when available -->
+            <p class="meta">Year / Make / Model: <em>Details coming soon</em></p>
+            <p>Jet Ski 2 blends quick acceleration with refined control, ideal for guests who want a confident and premium day on the water.</p>
+            <p class="price">$500/day</p>
+            <ul class="pill-list">
+              <li>High Performance</li>
+              <li>Luxury Ride</li>
+              <li>Fast</li>
+            </ul>
+            <a class="btn card-btn" href="#contact">Reserve This Jet Ski</a>
+          </div>
+        </article>
+
+        <article class="card rental-card">
+          <!-- Replace this with your real Jet Ski 3 photo -->
+          <img src="https://images.unsplash.com/photo-1621000689893-1805f9914d8f?auto=format&fit=crop&w=1200&q=80" alt="Jet Ski 3 with premium lake backdrop" loading="lazy" />
+          <div class="card-body">
+            <h3>Jet Ski 3</h3>
+            <!-- Update year/make/model when available -->
+            <p class="meta">Year / Make / Model: <em>Details coming soon</em></p>
+            <p>Designed for an upscale rental experience, Jet Ski 3 offers impressive power and a clean, polished ride from launch to dock.</p>
+            <p class="price">$500/day</p>
+            <ul class="pill-list">
+              <li>High Performance</li>
+              <li>Luxury Ride</li>
+              <li>Fast</li>
+            </ul>
+            <a class="btn card-btn" href="#contact">Reserve This Jet Ski</a>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="container section">
-      <h2>Local Areas We Focus On</h2>
-      <div class="grid two">
-        <article class="card">
-          <h3>Springfield, MO</h3>
-          <p>Residential and light commercial renovation planning and oversight.</p>
-          <a class="btn secondary" href="locations/springfield-mo.html">View Springfield Services</a>
+    <section id="pricing" class="section section-muted">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Pricing</p>
+          <h2>Simple, Clear, Premium</h2>
+        </div>
+
+        <article class="pricing-card">
+          <!-- Update pricing and fees here if they change -->
+          <h3>$500/day <span>per jet ski</span></h3>
+          <ul>
+            <li><strong>Deposit required:</strong> $250 per jet ski</li>
+            <li><strong>Delivery fee:</strong> Varies by location</li>
+            <li><strong>Fuel:</strong> Customer responsibility</li>
+            <li><strong>Life jackets:</strong> Included</li>
+          </ul>
         </article>
-        <article class="card">
-          <h3>Branson, MO</h3>
-          <p>Consulting and pre-construction support for renovation and solar-forward projects.</p>
-          <a class="btn secondary" href="locations/branson-mo.html">View Branson Services</a>
-        </article>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="section container">
+      <div class="section-head">
+        <p class="eyebrow">How It Works</p>
+        <h2>Your Reservation in 4 Steps</h2>
+      </div>
+
+      <div class="grid steps-grid">
+        <article class="card step"><span>1</span><h3>Choose Your Jet Ski</h3><p>Select the ride that fits your lake day plans.</p></article>
+        <article class="card step"><span>2</span><h3>Call, Text, or Request</h3><p>Reach out by phone or submit a booking request online.</p></article>
+        <article class="card step"><span>3</span><h3>Confirm Details</h3><p>Lock in your date, lake, and delivery preferences.</p></article>
+        <article class="card step"><span>4</span><h3>Show Up and Ride</h3><p>Arrive ready with ID and waiver, then enjoy the water.</p></article>
+      </div>
+    </section>
+
+    <section id="why-us" class="section section-muted">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Why Choose Us</p>
+          <h2>A Premium Local Rental Experience</h2>
+        </div>
+
+        <div class="grid benefits-grid">
+          <article class="card"><h3>Premium Experience</h3><p>Clean equipment and polished service from first call to drop-off.</p></article>
+          <article class="card"><h3>Fast, Powerful Rides</h3><p>Jet skis selected for strong performance and a confident ride.</p></article>
+          <article class="card"><h3>Delivery Available</h3><p>Convenient delivery options based on location and schedule.</p></article>
+          <article class="card"><h3>Simple Booking</h3><p>Clear pricing, quick communication, and straightforward reservations.</p></article>
+          <article class="card"><h3>Local Service</h3><p>Focused support for Grand Lake and surrounding lake communities.</p></article>
+          <article class="card"><h3>Life Jackets Included</h3><p>Every rental includes life jackets for a ready-to-go launch.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="service-area" class="section container">
+      <div class="section-head">
+        <p class="eyebrow">Service Area</p>
+        <h2>Grand Lake and Beyond</h2>
+      </div>
+      <p class="area-copy">Aqua Monkeys Aquatic Rentals serves Grand Lake, Oklahoma and nearby lake areas, with coverage that can extend toward Lake of the Ozarks depending on scheduling and logistics. Delivery availability and delivery fees vary by location.</p>
+    </section>
+
+    <section id="gallery" class="section section-muted">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Gallery</p>
+          <h2>Premium Lake Day Moments</h2>
+        </div>
+
+        <div class="grid gallery-grid">
+          <!-- Replace these with your real photo gallery images -->
+          <img src="https://images.unsplash.com/photo-1528150177508-7cc0f88f34c4?auto=format&fit=crop&w=1200&q=80" alt="Jet ski on the water" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1611101024241-bbd0f2d4b6f4?auto=format&fit=crop&w=1200&q=80" alt="Jet ski side view" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1200&q=80" alt="Premium lake lifestyle scene" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1452621946466-c0f2ff2ff100?auto=format&fit=crop&w=1200&q=80" alt="Dock and launch area at the lake" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section container">
+      <div class="section-head">
+        <p class="eyebrow">FAQ</p>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-list">
+        <details><summary>How much does it cost to rent a jet ski?</summary><p>$500 per day per jet ski.</p></details>
+        <details><summary>Is there a deposit?</summary><p>Yes, a $250 deposit is required per jet ski.</p></details>
+        <details><summary>What is your cancellation policy?</summary><p>Cancellations must be made at least 48 hours before the reservation time, or the deposit is non-refundable.</p></details>
+        <details><summary>Is fuel included?</summary><p>No, fuel is the customer’s responsibility.</p></details>
+        <details><summary>Are life jackets included?</summary><p>Yes, life jackets are included.</p></details>
+        <details><summary>Is there a minimum age to rent?</summary><p>Yes, renters must be 21 or older.</p></details>
+        <details><summary>What do I need to rent?</summary><p>A valid ID, signed waiver, and payment/deposit are required before release.</p></details>
+        <details><summary>What happens if the jet ski is damaged?</summary><p>Renters are financially responsible for damage or loss that occurs during the rental period, as outlined in the rental agreement.</p></details>
+        <details><summary>Do you deliver?</summary><p>Yes, delivery is available depending on location. Delivery fees vary by location.</p></details>
+        <details><summary>Can I call or text to reserve?</summary><p>Yes. Call or text us directly at <a href="tel:+14175920300">(417) 592-0300</a>.</p></details>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-muted">
+      <div class="container contact-layout">
+        <div>
+          <p class="eyebrow">Contact / Booking</p>
+          <h2>Ready to Reserve Your Ride?</h2>
+          <p>Call, text, or send a booking request today.</p>
+          <p><strong>Phone:</strong> <a href="tel:+14175920300">417-592-0300</a></p>
+          <p><strong>Email:</strong> <a href="mailto:austiyou@gmail.com">austiyou@gmail.com</a></p>
+          <p class="booking-note">Booking tip: Include your desired date, lake/location, and preferred jet ski to speed up confirmation.</p>
+        </div>
+
+        <!--
+          Easy Formspree integration:
+          1) Create a Formspree form.
+          2) Replace FORM_ENDPOINT below with your endpoint URL.
+          3) Keep method="POST" and all field names as needed.
+        -->
+        <form id="booking-form" class="form-card" action="https://formspree.io/f/FORM_ENDPOINT" method="POST">
+          <label for="name">Full Name</label>
+          <input id="name" name="full_name" type="text" required />
+
+          <label for="phone">Phone Number</label>
+          <input id="phone" name="phone_number" type="tel" required />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+
+          <label for="date">Desired Date</label>
+          <input id="date" name="desired_date" type="date" required />
+
+          <label for="location">Desired Lake / Location</label>
+          <input id="location" name="desired_location" type="text" required />
+
+          <label for="selection">Jet Ski Selection</label>
+          <select id="selection" name="jet_ski_selection" required>
+            <option value="" selected disabled>Select one</option>
+            <option>Jet Ski 1</option>
+            <option>Jet Ski 2</option>
+            <option>Jet Ski 3</option>
+          </select>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="Share details about your rental request."></textarea>
+
+          <button type="submit" class="btn">Send Booking Request</button>
+          <p id="form-status" aria-live="polite"></p>
+        </form>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> Rooted Renovations · Southwest Missouri.</p>
+    <div class="container footer-grid">
+      <div>
+        <h3>Aqua Monkeys Aquatic Rentals</h3>
+        <p><a href="tel:+14175920300">417-592-0300</a></p>
+        <p><a href="mailto:austiyou@gmail.com">austiyou@gmail.com</a></p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#rentals">Rentals</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container legal">
+      <p>Subject to availability. Waiver and valid ID required before rental. Delivery availability depends on location. Pricing and policies may be updated.</p>
+      <p>© <span id="year"></span> Aqua Monkeys Aquatic Rentals. All rights reserved.</p>
     </div>
   </footer>
 
