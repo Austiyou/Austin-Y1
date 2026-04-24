@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://therootedrenovations.com/sitemap.xml
+# Update this with your real production domain before launch.
+Sitemap: https://YOUR-DOMAIN-HERE/sitemap.xml
