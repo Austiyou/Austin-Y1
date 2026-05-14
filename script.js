@@ -22,16 +22,25 @@ if (form && statusEl) {
     statusEl.style.color = '#435346';
 
     try {
-      const response = await fetch('/api/lead', {
+      const response = await fetch('./api/lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       });
 
-      const body = await response.json().catch(() => ({}));
+      const contentType = response.headers.get('content-type') || '';
+      const isJson = contentType.includes('application/json');
+      const body = isJson ? await response.json() : null;
 
       if (!response.ok) {
-        throw new Error(body.error || 'Request failed');
+        if (response.status === 404) {
+          throw new Error('Lead API not found (404). Make sure the Node server is running and /api/lead is available.');
+        }
+
+        throw new Error(
+          body?.error
+            || `Lead request failed (${response.status}). Please verify server and SMTP/Twilio configuration.`
+        );
       }
 
       statusEl.textContent = 'Thanks! Your request has been sent. We will contact you soon.';
