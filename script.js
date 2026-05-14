@@ -28,15 +28,17 @@ if (form && statusEl) {
         body: JSON.stringify(payload)
       });
 
+      const body = await response.json().catch(() => ({}));
+
       if (!response.ok) {
-        throw new Error('Request failed');
+        throw new Error(body.error || 'Request failed');
       }
 
       statusEl.textContent = 'Thanks! Your request has been sent. We will contact you soon.';
       statusEl.style.color = '#23613d';
       form.reset();
     } catch (error) {
-      statusEl.textContent = 'Sorry, there was a problem sending your request. Please call or email us directly.';
+      statusEl.textContent = error.message || 'Sorry, there was a problem sending your request. Please call or email us directly.';
       statusEl.style.color = '#a13a32';
     }
   });

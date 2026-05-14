@@ -23,12 +23,23 @@ Multi-page marketing site and lead-capture backend for Rooted Renovations.
 3. `npm start`
 4. Visit `http://localhost:3000`
 
-## Real lead email delivery
-Form submissions post to `POST /api/lead` and are emailed via SMTP.
-Required vars:
+## Lead notifications (email and optional SMS)
+Form submissions post to `POST /api/lead` and can send:
+- Email via SMTP
+- SMS via Twilio (optional)
+
+### Required for email delivery
 - `SMTP_HOST`
 - `SMTP_PORT`
 - `SMTP_USER`
 - `SMTP_PASS`
 - `SMTP_FROM`
 - `LEAD_TO_EMAIL`
+
+### Optional for SMS delivery
+- `TWILIO_ACCOUNT_SID`
+- `TWILIO_AUTH_TOKEN`
+- `TWILIO_FROM_NUMBER`
+- `LEAD_TO_SMS`
+
+If SMTP and Twilio are both missing, lead submit will return an error.
