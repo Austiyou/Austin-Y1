@@ -1,15 +1,9 @@
 {
   "name": "rooted-renovations-site",
   "version": "1.0.0",
-  "description": "Marketing site and lead form backend for Rooted Renovations",
-  "main": "server.js",
+  "description": "Static marketing site for Rooted Renovations (GitHub Pages + Formspree)",
+  "private": true,
   "scripts": {
-    "start": "node server.js"
-  },
-  "dependencies": {
-    "dotenv": "^16.4.5",
-    "express": "^4.21.1",
-    "nodemailer": "^6.9.16",
-    "twilio": "^5.5.2"
+    "check:js": "node --check script.js"
   }
 }

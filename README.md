@@ -1,6 +1,6 @@
 # Rooted Renovations Website
 
-Multi-page marketing site and lead-capture backend for Rooted Renovations.
+Multi-page marketing site for Rooted Renovations, deployed on GitHub Pages.
 
 ## Pages
 - `/` Home
@@ -12,34 +12,19 @@ Multi-page marketing site and lead-capture backend for Rooted Renovations.
 - `/locations/springfield-mo.html`
 - `/locations/branson-mo.html`
 
+## Lead Form (GitHub Pages compatible)
+The contact form submits directly to Formspree:
+- Endpoint: `https://formspree.io/f/xdabrwee`
+- Submission is handled in `script.js` with real success/failure messages.
+- No SMTP/Twilio secrets are exposed in frontend code.
+
 ## SEO / AI Search Features
 - Structured data: Organization, Person, Service list, FAQPage, BreadcrumbList.
 - Crawl files: `robots.txt` and `sitemap.xml`.
 - Localized service pages and measurable portfolio outcomes.
 
-## Run locally
-1. `npm install`
-2. Copy `.env.example` to `.env` and set SMTP values.
-3. `npm start`
-4. Visit `http://localhost:3000`
+## Backend quarantine
+Legacy Node/Express notification code has been moved to:
+- `backend-archive/server.js`
 
-## Lead notifications (email and optional SMS)
-Form submissions post to `POST /api/lead` and can send:
-- Email via SMTP
-- SMS via Twilio (optional)
-
-### Required for email delivery
-- `SMTP_HOST`
-- `SMTP_PORT`
-- `SMTP_USER`
-- `SMTP_PASS`
-- `SMTP_FROM`
-- `LEAD_TO_EMAIL`
-
-### Optional for SMS delivery
-- `TWILIO_ACCOUNT_SID`
-- `TWILIO_AUTH_TOKEN`
-- `TWILIO_FROM_NUMBER`
-- `LEAD_TO_SMS`
-
-If SMTP and Twilio are both missing, lead submit will return an error.
+It is not used by the GitHub Pages deployment.
