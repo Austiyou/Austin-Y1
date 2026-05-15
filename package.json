@@ -1,0 +1,9 @@
+{
+  "name": "rooted-renovations-site",
+  "version": "1.0.0",
+  "description": "Static marketing site for Rooted Renovations (GitHub Pages + Formspree)",
+  "private": true,
+  "scripts": {
+    "check:js": "node --check script.js"
+  }
+}
